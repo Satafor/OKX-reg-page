@@ -132,6 +132,19 @@ video { display: block; max-width: 100%; border-radius: 10px; background: #000; 
 .terminal-body { padding: 0; }
 .terminal-video { width: 100%; height: 520px; object-fit: cover; border-radius: 10px; }
 
+/* 邀请加入板块（新增）：左右布局 */
+.section-invite { padding: 60px 0; background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0) 60%); }
+.invite-inner { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 36px; align-items: center; }
+.invite-media img { width: 100%; height: auto; border-radius: 12px; background: #000; }
+.invite-text { display: grid; gap: 16px; }
+.invite-title { font-size: 32px; line-height: 1.3; margin: 0; font-weight: 800; }
+.invite-subtitle { margin: 0; color: var(--muted); }
+.invite-actions { display: flex; gap: 12px; }
+
+/* 绿色按钮（参考图片：绿底黑字，圆角大） */
+.btn-lime { background: #c6ff2b; color: #0a0a0a; border-color: transparent; }
+.btn-lime:hover { filter: brightness(.95); }
+
 /* 助手区 */
 .section-helper { padding: 60px 0; background: linear-gradient(0deg, rgba(255,255,255,.02), rgba(255,255,255,0) 60%); }
 /* 单列上下：文字在上，视频在下；紧密排列 */
@@ -169,6 +182,7 @@ video { display: block; max-width: 100%; border-radius: 10px; background: #000; 
 @media (max-width: 1024px) {
 	.hero-inner { grid-template-columns: 1fr; }
 	.device-frame { justify-self: start; }
+    .invite-inner { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
 	.header-inner { height: 58px; }
@@ -179,6 +193,7 @@ video { display: block; max-width: 100%; border-radius: 10px; background: #000; 
 	/* 保持完整展示但降低高度 */
 	.helper-video { height: 300px; }
 	.footer-grid { grid-template-columns: repeat(2, 1fr); }
+    .invite-title { font-size: 26px; }
 }
 @media (max-width: 480px) {
 	.btn { height: 38px; padding: 0 14px; }
@@ -186,4 +201,5 @@ video { display: block; max-width: 100%; border-radius: 10px; background: #000; 
 	.container { padding: 0 16px; }
 	.helper-video { height: 240px; }
 	.footer-grid .col:last-child .btn-small { width: 100%; }
+    .invite-title { font-size: 22px; }
 }

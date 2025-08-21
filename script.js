@@ -39,4 +39,30 @@
 			// 兜底：如不支持或异常，保持静音但不自动播放
 		}
 	}
+
+	// 邀请码复制按钮：点击后复制到剪贴板并弹出提示
+	var copyBtn = document.getElementById('copy-invite');
+	if (copyBtn) {
+		copyBtn.addEventListener('click', function () {
+			var code = '34308786';
+			var copy = function (text) {
+				if (navigator.clipboard && navigator.clipboard.writeText) {
+					return navigator.clipboard.writeText(text);
+				}
+				// 兼容处理：创建临时 input
+				return new Promise(function(resolve){
+					var input = document.createElement('input');
+					input.value = text;
+					document.body.appendChild(input);
+					input.select();
+					try { document.execCommand('copy'); } catch (e) {}
+					document.body.removeChild(input);
+					resolve();
+				});
+			};
+			copy(code).then(function(){
+				alert('\u9080\u8bf7\u780134308786\u5df2\u590d\u5236');
+			});
+		});
+	}
 })();
