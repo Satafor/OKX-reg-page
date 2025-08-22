@@ -29,7 +29,9 @@
 				entries.forEach(function (entry) {
 					if (!played && entry.isIntersecting) {
 						played = true;
-						helperVideo.play().catch(function () { /* 忽略可能的自动播放限制 */ });
+						helperVideo.play().catch(function () { 
+							console.log('自动播放被阻止'); 
+						});
 						io.disconnect();
 					}
 				});
